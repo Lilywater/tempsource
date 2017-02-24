@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./calendar/calendar-blue.css"/>
+
+</head>
+<body>
+    
+<form action="tt.php" method="get">
+  StartDate:  <input type="text" name="time_start" id="J_time_start" class="date" size="12" ><br>
+  <br>
+  EndData:    <input type="text" name="time_end" id="J_time_end" class="date" size="12" ><br>
+  <br>
+    Location: 
+   <select name="Location">
+  <option value ="Ku2nming"> Ku2nming</option>
+  <option value ="Chengdu">Chengdu</option>
+  <option value="Beijing">Beijing</option>
+  <option value="Panzhihua">Panzhihua</option>
+  <option value="Shenzhen">Shenzhen</option>
+  <option value="Shanghai">Shanghai</option>
+  <option value="Liangshan">Liangshan</option>
+  <option value="Chongqing">Chongqing</option>
+</select><br>
+
+<table input type="hidden" name="mytable">
+        <tr>
+            <td>Latitude</td>
+            <td>Longitude</td>
+         </tr>
+        <tr>
+            <td><input  type="text" name="CC" id="latbox" value="ZZ" /></td>
+            <td><input  type="text" name="dd" id="lngbox" value="PP"/></td>
+            
+        </tr>
+    </table>
+
+    <input type="submit">
+</form>
+    
+    
+<script src="./calendar/calendar.js"></script>
+<script>
+Calendar.setup({
+    inputField : "J_time_start",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "J_time_end",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
+$('.J_preview').preview(); //查看大图
+$('.J_cate_select').cate_select({top_option:lang.all}); //分类联动
+$('.J_tooltip[title]').tooltip({offset:[10, 2], effect:'slide'}).dynamic({bottom:{direction:'down', bounce:true}});
+</script>
+
+</body>
+</html>
+
